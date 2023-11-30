@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head th:replace="Frags :: head('MyPizzeria')" >
+	
+</head>
+
+<body  data-bs-theme="dark">
+	
+	
+	<th:block th:replace="Frags :: header()"></th:block>
+	
+	<main>
+		
+		<div class="container">
+			
+			<h1 class="text-center">
+				Best of the pizzas 
+			</h1>
+			
+			<div class=" my-4 row justify-content-center">
+				
+				<h3 class="text-center">
+					my menù
+				</h3>
+				
+				<ul class="col-12">
+					<li class="row align-items-center" th:each="pizza : ${pizzas}">
+						
+						<img class="img-fluid col-3" th:src="@{${pizza.getFotoUrl()}}">
+						
+						<div class="col-1" >id: [[${pizza.getId()}]]</div>
+						
+						<div class="col-2" >nome: [[${pizza.getNome()}]]</div>
+						
+						<div class="col-3"> [[${pizza.getDescrizione()}]] </div>
+						
+						<div class="col-1" >[[${pizza.getPrezzo()}]] €</div>
+						
+						<div class="col-2" th:insert="Frags :: button('/pizza/'+ ${pizza.getId()} , 'show')" ></div>
+						
+					</li>
+				</ul>
+				
+			</div>
+			
+			
+		</div>
+		
+		
+	</main>
+		
+	
+	
+	
+	<script th:src="@{/webjars/bootstrap/5.3.2/js/bootstrap.bundle.min.js}"></script>
+</body>
+</html>
