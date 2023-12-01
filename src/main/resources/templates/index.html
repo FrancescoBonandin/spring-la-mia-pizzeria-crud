@@ -23,7 +23,13 @@
 					my menù
 				</h3>
 				
-				<ul class="col-12">
+				<h4 class="col-12 text-center" th:if="${pizzas == null || pizzas.size() == 0}">
+					nessuna pizza presente nel menù
+				</h4>
+				
+				<ul th:if="${pizzas != null && pizzas.size() > 0}" class="col-12">
+					
+					
 					<li class="row align-items-center" th:each="pizza : ${pizzas}">
 						
 						<img class="img-fluid col-3" th:src="@{${pizza.getFotoUrl()}}">
