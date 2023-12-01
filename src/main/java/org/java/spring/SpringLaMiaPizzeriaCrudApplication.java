@@ -21,11 +21,11 @@ public class SpringLaMiaPizzeriaCrudApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		
 		int num = 1;
-		pizzaService.save(new Pizza("Pizza " + num++, "una pizza buona", 9.90f + 0.1f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
-		pizzaService.save(new Pizza("Pizza " + num++, "una pizza buona", 9.90f + 0.2f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
-		pizzaService.save(new Pizza("Pizza " + num++, "una pizza buona", 9.90f + 0.3f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
-		pizzaService.save(new Pizza("Pizza " + num++, "una pizza buona", 9.90f + 0.4f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
-		pizzaService.save(new Pizza("Pizza " + num++, "una pizza buona", 9.90f + 0.5f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
+		pizzaService.save(new Pizza("Pizza " + num, "una pizza buona " + num++, 9.90f + 0.1f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
+		pizzaService.save(new Pizza("Pizza " + num, "una pizza buona " + num++, 9.90f + 0.2f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
+		pizzaService.save(new Pizza("Pizza " + num, "una pizza buona " + num++, 9.90f + 0.3f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
+		pizzaService.save(new Pizza("Pizza " + num, "una pizza buona " + num++, 9.90f + 0.4f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
+		pizzaService.save(new Pizza("Pizza " + num, "una pizza buona " + num++, 9.90f + 0.5f, "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Pizza_marinara.jpg/260px-Pizza_marinara.jpg" ));
 	}
 
 }

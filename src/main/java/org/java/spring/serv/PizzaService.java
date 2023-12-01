@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PizzaService {
+public class PizzaService  {
 
 	
 	@Autowired
@@ -22,6 +22,12 @@ public class PizzaService {
 		
 		return pizzaRepository.findById(id).get();
 	}
+	
+	public List<Pizza> findByNomeOrDescrizione(String q) {
+		
+		return pizzaRepository.findByNomeContainingOrDescrizioneContaining(q,q);
+	}
+	
 	public void save(Pizza pizza) {
 		
 		pizzaRepository.save(pizza);
