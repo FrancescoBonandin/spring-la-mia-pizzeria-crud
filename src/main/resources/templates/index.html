@@ -40,7 +40,7 @@
 				<ul th:if="${pizzas != null && pizzas.size() > 0}" class="col-12">
 					
 					
-					<li class="row align-items-center" th:each="pizza : ${pizzas}">
+					<li class="row mb-3 align-items-center" th:each="pizza : ${pizzas}">
 						
 						<img class="img-fluid col-3" th:src="@{${pizza.getFotoUrl()}}">
 						

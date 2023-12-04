@@ -54,7 +54,7 @@ public class MainController {
 			@Valid @ModelAttribute Pizza pizza, 
 			BindingResult bindingResult) {
 		
-		System.out.println("Book:\n" + pizza);
+		System.out.println("pizza:\n" + pizza);
 		System.out.println("\n---------------\n");
 		System.out.println("Error:\n" + bindingResult);
 		
@@ -65,17 +65,24 @@ public class MainController {
 			return "create";
 		}
 		
-		try {
+		else {
 			
-			pizzaService.save(pizza);
-		} catch(Exception e) {
+			try {
+					
+				pizzaService.save(pizza);
+				
+			} 
 			
-			bindingResult.addError(new FieldError("pizza", "nome", pizza.getNome(), false, null, null, "Nome must be unique"));
-			model.addAttribute("pizza", pizza);
-			return "create";
+			catch(Exception e) {
+				
+				bindingResult.addError(new FieldError("pizza", "nome", pizza.getNome(), false, null, null, "Nome must be unique"));
+				model.addAttribute("pizza", pizza);
+				return "create";
+			}
+			
+			return "redirect:/";
 		}
 		
-		return "redirect:/";
 	}
 	
 	@GetMapping("/pizza/{id}")
