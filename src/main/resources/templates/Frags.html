@@ -48,6 +48,18 @@
 			>
 			[[${title}]]
 		</a>
+		
+		<div  th:fragment="errorDiv(field)"
+		     th:if="${#fields.hasErrors(field)}">
+		     
+			<ul class="text-start col-12 alert alert-danger">
+			   <li  
+			   		th:each="err : ${#fields.errors(field)}">
+			   		[[${err}]]	
+			   	</li>
+			</ul>
+			
+		</div>
 	
 	</body>
 </html>
